@@ -33,7 +33,13 @@ jobs:
 
       - name: Build
         run: npm run build
+      
+      - name: 上传项目
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./dist
 
+  # 部署任务
   deploy:
     environment:
       name: github-pages
@@ -41,15 +47,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
+      - name: 部署到 GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v2
