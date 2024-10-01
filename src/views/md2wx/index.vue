@@ -45,6 +45,10 @@
       title: "墨滴",
       link: "https://editor.mdnice.com/",
     },
+    {
+      title: "Doocs",
+      link: "https://doocs.github.io/md/",
+    },
   ]);
   </script>
   
